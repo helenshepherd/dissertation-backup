@@ -3,10 +3,11 @@ import React, { useContext } from 'react';
 import Card from '../UI/Card';
 import ExpensesFilter from './ExpensesFilter';
 import ExpensesList from './ExpensesList';
-import ExpensesChart from './ExpensesChart';
+import ExpensesChart from './TreeMapChart';
 import './Expenses.css';
 import ParentContext from '../../store/parent-context';
-import BarChart from '../BarChart';
+import TreeMapChart from './TreeMapChart';
+
 
 const Expenses = (props) => {
   const ctx = useContext(ParentContext);
@@ -21,7 +22,8 @@ const Expenses = (props) => {
         <ExpensesFilter
           selected={ctx.parent}
         />
-        <ExpensesChart expenses={filteredExpenses} />
+        {/* <ExpensesChart expenses={filteredExpenses} /> */}
+        <TreeMapChart expenses={props.items}/>
 
         <ExpensesList 
           selected = {ctx.parent}

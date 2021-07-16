@@ -1,10 +1,10 @@
 import React from 'react'
-import {Bar} from 'react-chartjs-2'
+import {Doughnut} from 'react-chartjs-2'
 
 const BarChart = (props) => {
 
     return <div>
-        <Bar
+        <Doughnut
             data = {{
                 labels:  props.dataPoints.map(dataPoint => dataPoint.label),
                 datasets: [{
@@ -12,7 +12,7 @@ const BarChart = (props) => {
                     data: props.dataPoints.map(dataPoint => dataPoint.value),
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(54, 0, 255, 0.2)',
                         'rgba(255, 206, 86, 0.2)',
                         'rgba(75, 192, 192, 0.2)',
                         'rgba(153, 102, 255, 0.2)',
