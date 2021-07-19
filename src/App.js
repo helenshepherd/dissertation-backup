@@ -6,25 +6,32 @@ import ParentContext from './store/parent-context';
 
 const DUMMY_EXPENSES = [
   {
+    id: 'e0',
+    title: 'Intel',
+    amount: 24,
+    parent: 'Direct Investments',
+    date: new Date(2020, 7, 14),
+  },
+  {
     id: 'e1',
     title: 'Fund 1',
     amount: 24,
-    parent: 'Top Layer',
+    parent: 'Subfunds',
     date: new Date(2020, 7, 14),
   },
-  { id: 'e2', title: 'Fund 2', amount: 32, parent: 'Top Layer', date: new Date(2021, 2, 12) },
+  { id: 'e2', title: 'Fund 2', amount: 32, parent: 'Subfunds', date: new Date(2021, 2, 12) },
   {
     id: 'e3',
     title: 'Fund 3',
     amount: 11,
-    parent: 'Top Layer',
+    parent: 'Subfunds',
     date: new Date(2021, 2, 28),
   },
   {
     id: 'e4',
     title: 'Fund 4',
     amount: 23,
-    parent: 'Top Layer',
+    parent: 'Subfunds',
     date: new Date(2021, 5, 12),
   },
   {

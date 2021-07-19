@@ -8,7 +8,9 @@ const TreeMapChart = (props) => {
     'Parent',
     'Percentage',
     'Color' ],
-    ['Top Layer', null, 0, 0]
+    ['Top Layer', null, 0, 0],
+    ['Subfunds','Top Layer',0,0],
+    ['Direct Investments', 'Top Layer', 0,0]
 
   ];
 

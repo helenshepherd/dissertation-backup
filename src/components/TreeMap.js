@@ -9,8 +9,8 @@ const TreeMap = (props) => {
     console.log(props.dataPoints)
     return <div>
 <Chart
-  width={'500px'}
-  height={'300px'}
+  width={'100%'}
+  height={'500px'}
   chartType="TreeMap"
   loader={<div>Loading Chart</div>}
   data={props.dataPoints}
@@ -21,6 +21,9 @@ const TreeMap = (props) => {
     headerHeight: 15,
     fontColor: 'black',
     showScale: true,
+  }}
+  options={{
+    maxDepth: 2
   }}
   rootProps={{ 'data-testid': '1' }}
 />
