@@ -15,14 +15,12 @@ const TreeMap = (props) => {
   loader={<div>Loading Chart</div>}
   data={props.dataPoints}
   options={{
-    minColor: '#f00',
-    midColor: '#ddd',
-    maxColor: '#0d0',
+    minColor: '#f3ffff',
+    midColor: '#00b9bc',
+    maxColor: '#007c7d',
     headerHeight: 15,
     fontColor: 'black',
-    showScale: true,
-  }}
-  options={{
+    showScale: false,
     maxDepth: 2
   }}
   rootProps={{ 'data-testid': '1' }}
