@@ -294,7 +294,6 @@ const App = () => {
     }}> {/* //the.Provider makes it a component */}
       {/* <NewExpense onAddExpense={addExpenseHandler} /> */}
       <Expenses items={expenses} />
-      <TreeMapRV/>
     </ParentContext.Provider>
   );
 };

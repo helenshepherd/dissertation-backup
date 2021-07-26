@@ -9,31 +9,30 @@ class TreeMapRV extends Component {
       "color": "transparent",
       "children": [
        {
-        "title": "cluster",
+        "title": "Direct Investments (Top Layer)",
         "color": "orange",
         "children": [
-         {"title": "AgglomerativeCluster", "color": "#ff0000", "size": 3938},
-         {"title": "CommunityStructure", "color": "#ff0000", "size": 3812},
-         {"title": "HierarchicalCluster", "color": "#ff0000", "size": 6714},
-         {"title": "MergeEdge", "color": "#ff0000", "size": 743}
+         {"title": "Industrials", "color": "#ff0000", "size": 43.1},
+         {"title": "Financials", "color": "#ff0000", "size": 46.9},
+         {"title": "Consumer Goods", "color": "#ff0000", "size": 42.5},
+         {"title": "Consumer Services", "color": "#ff0000", "size": 35.9},
+         {"title": "Technology", "color": "#ff0000", "size": 48.9},
+         {"title": "Heathcare", "color": "#ff0000", "size": 42.2},
+         {"title": "Basic Materials", "color": "#ff0000", "size": 32.4},
+         {"title": "Utilities", "color": "#ff0000", "size": 31.8},
+         {"title": "Oil & Gas", "color": "#ff0000", "size": 32.03},
+         {"title": "Telecoms", "color": "#ff0000", "size": 32.63}
         ]
        },
        {
-        "title": "",
+        "title": "Subfunds",
         "color": "orange",
         "children": [
-         {"title": "BetweennessCentrality", "color": "#ff0000", "size": 3534},
-         {"title": "LinkDistance", "color": "#ff0000", "size": 5731},
-         {"title": "MaxFlowMinCut", "color": "#ff0000", "size": 7840},
-         {"title": "ShortestPaths", "color": "#ff0000", "size": 5914},
-         {"title": "SpanningTree", "color": "#ff0000", "size": 3416}
-        ]
-       },
-       {
-        "title": "optimization",
-        "color": "orange",
-        "children": [
-         {"title": "AspectRatioBanker", "color": "#ff0000", "size": 7074}
+         {"title": "Fund 1", "color": "#ff0000", "size": 3},
+         {"title": "Fund 2", "color": "#ff0000", "size": 4},
+         {"title": "Fund 3", "color": "#ff0000", "size": 2},
+         {"title": "Fund 4", "color": "#ff0000", "size": 2},
+
         ]
        }
       ]
@@ -42,9 +41,9 @@ class TreeMapRV extends Component {
       <div className="App">
         <Treemap
           mode={'circlePack'}
-          // mode={'squarify'}
+          mode={'squarify'}
           title={'My New Treemap'}
-          width={1200}
+          width={800}
           height={1000}
           data={myData}
           colorType={'literal'}
