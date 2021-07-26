@@ -1,6 +1,7 @@
 
 import React from 'react'
 import Chart from "react-google-charts";
+import './TreeMap.css';
 
 
 
@@ -18,10 +19,14 @@ const TreeMap = (props) => {
     minColor: '#f3ffff',
     midColor: '#00b9bc',
     maxColor: '#007c7d',
-    headerHeight: 15,
+    headerHeight: 30,
     fontColor: 'black',
+    // fontSize: 18,
     showScale: false,
-    maxDepth: 2
+    maxDepth: 2,
+    legend: { position: "top", alignment: "start", maxLines: 2 },
+    chartArea: {left: 20, right:30},
+    textStyle: {color: 'black', fontName: 'Arial', fontSize: '20', y:"500"}
   }}
   rootProps={{ 'data-testid': '1' }}
 />

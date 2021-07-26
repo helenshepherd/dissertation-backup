@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
-import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses/Expenses';
 import ParentContext from './store/parent-context';
+import TreeMapRV from './components/TreeMapRV';
+import '../node_modules/react-vis/dist/style.css';
 
 const DUMMY_EXPENSES = [
   {
@@ -291,8 +292,9 @@ const App = () => {
       parent: filteredParent,
       onItemClick: filterChangeHandler
     }}> {/* //the.Provider makes it a component */}
-      <NewExpense onAddExpense={addExpenseHandler} />
+      {/* <NewExpense onAddExpense={addExpenseHandler} /> */}
       <Expenses items={expenses} />
+      <TreeMapRV/>
     </ParentContext.Provider>
   );
 };

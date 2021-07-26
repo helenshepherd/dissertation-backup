@@ -9,10 +9,12 @@
     "chart.js": "^3.4.1",
     "chartjs-chart-treemap": "^1.0.2",
     "react": "^17.0.1",
+    "react-bubble-chart": "^0.4.0",
     "react-chartjs-2": "^3.0.3",
     "react-dom": "^17.0.1",
     "react-google-charts": "^3.0.15",
     "react-scripts": "4.0.1",
+    "react-vis": "^1.11.7",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

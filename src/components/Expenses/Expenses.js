@@ -7,6 +7,7 @@ import ExpensesChart from './TreeMapChart';
 import './Expenses.css';
 import ParentContext from '../../store/parent-context';
 import TreeMapChart from './TreeMapChart';
+import TreeMapRV from '../TreeMapRV';
 
 
 const Expenses = (props) => {
@@ -24,7 +25,7 @@ const Expenses = (props) => {
         />
         {/* <ExpensesChart expenses={filteredExpenses} /> */}
         <TreeMapChart expenses={props.items}/>
-
+        <TreeMapRV/>
         <ExpensesList 
           selected = {ctx.parent}
           items={filteredExpenses} />
