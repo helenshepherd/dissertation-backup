@@ -7,7 +7,7 @@ import './TreeMap.css';
 
 const TreeMap = (props) => {
 
-    console.log(props.dataPoints)
+
     return <div>
 <Chart
   width={'100%'}

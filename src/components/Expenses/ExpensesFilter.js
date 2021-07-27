@@ -8,7 +8,7 @@ const ExpensesFilter = (props) => {
 
   const dropdownChangeHandler = (event) => {
     ctx.onItemClick(event.target.value);
-    console.log(event);
+    // console.log(event);
   };
 
   return (

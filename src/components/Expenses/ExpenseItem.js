@@ -9,7 +9,7 @@ const ExpenseItem = (props) => {
   const ctx = useContext(ParentContext);
 
   const clickListener = (event) => {
-    console.log(props.title);
+    // console.log(props.title);
     ctx.onItemClick(props.title);
   };
 
