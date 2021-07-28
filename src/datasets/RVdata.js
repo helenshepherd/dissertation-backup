@@ -106,14 +106,14 @@ const RVdata = [
     },
     {
       id: 'b1',
-      title: {v: 'Financials1', f: 'Financials'},
+      title: 'Financials',
       amount: 16.9,
       parent: 'Fund 1',
       type: 'Direct Investments'
     },
     {
       id: 'b2',
-      title: {v: 'Industrials1', f: 'Industrials'},
+      title: 'Industrials',
       amount: 13.1,
       parent: 'Fund 1',
       type: 'Direct Investments'
@@ -121,7 +121,7 @@ const RVdata = [
     },
     {
       id: 'b3',
-      title: {v: 'ConsumerGoods1', f: 'Consumer Goods'},
+      title: 'Consumer Goods',
       amount: 12.5,
       parent: 'Fund 1',
       type: 'Direct Investments'
@@ -129,7 +129,7 @@ const RVdata = [
     },
     {
       id: 'b4',
-      title: {v: 'ConsumerServices1', f: 'Consumer Services'},
+      title: 'Consumer Services',
       amount: 5.93,
       parent: 'Fund 1',
       type: 'Direct Investments'
@@ -137,7 +137,7 @@ const RVdata = [
     },
     {
       id: 'b5',
-      title: {v: 'Technology1', f: 'Technology'},
+      title: 'Technology',
       amount: 18.9,
       parent: 'Fund 1',
       type: 'Direct Investments'
@@ -145,7 +145,7 @@ const RVdata = [
     },
     {
       id: 'b6',
-      title: {v: 'Healthcare1', f: 'Healthcare'},
+      title: 'Healthcare',
       amount: 12.2,
       parent: 'Fund 1',
       type: 'Direct Investments'
@@ -153,28 +153,28 @@ const RVdata = [
     },
     {
       id: 'b7',
-      title: {v: 'BasicMaterials1', f: 'Basic Materials'},
+      title: 'Basic Materials',
       amount: 2.44,
       parent: 'Fund 1',
       type: 'Direct Investments'
     },
     {
       id: 'b8',
-      title: {v: 'Utilities1', f: 'Utilities'},
+      title: 'Utilities',
       amount: 1.79,
       parent: 'Fund 1',
       type: 'Direct Investments'
     },
     {
       id: 'b9',
-      title: {v: 'Oil&Gas1', f: 'Oil & Gas'},
+      title: 'Oil & Gas',
       amount: 2.03,
       parent: 'Fund 1',
       type: 'Direct Investments'
     },  
     {
       id: 'b10',
-      title: {v: 'Telecoms1', f: 'Telecoms'},
+      title: 'Telecoms',
       amount: 2.63,
       parent: 'Fund 1',
       type: 'Direct Investments'
@@ -197,70 +197,70 @@ const RVdata = [
   
     {
       id: 'd1',
-      title: {v: 'Financials2', f: 'Financials'},
+      title: 'Financials',
       amount: 0.9,
       parent: 'Subfund 1',
       type: 'Direct Investments'
     },
     {
       id: 'd2',
-      title: {v: 'Industrials2', f: 'Industrials'},
+      title: 'Industrials',
       amount: 1.1,
       parent: 'Subfund 1',
       type: 'Direct Investments'
     },
     {
       id: 'd3',
-      title: {v: 'ConsumerGoods2', f: 'Consumer Goods'},
+      title: 'Consumer Goods',
       amount: 1.5,
       parent: 'Subfund 1',
       type: 'Direct Investments'
     },
     {
       id: 'd4',
-      title: {v: 'ConsumerServices2', f: 'Consumer Services'},
+      title: 'Consumer Services',
       amount: 1.93,
       parent: 'Subfund 1',
       type: 'Direct Investments'
     },
     {
       id: 'd5',
-      title: {v: 'Technology2', f: 'Technology'},
+      title: 'Technology',
       amount: 1.9,
       parent: 'Subfund 1',
       type: 'Direct Investments'
     },
     {
       id: 'd6',
-      title: {v: 'Healthcare2', f: 'Healthcare'},
+      title: 'Healthcare',
       amount: 1.2,
       parent: 'Subfund 1',
       type: 'Direct Investments'
     },
     {
       id: 'd7',
-      title: {v: 'BasicMaterials2', f: 'Basic Materials'},
+      title: 'Basic Materials',
       amount: 0.44,
       parent: 'Subfund 1',
       type: 'Direct Investments'
     },
     {
       id: 'd8',
-      title: {v: 'Utilities2', f: 'Utilities'},
+      title: 'Utilities',
       amount: 0.79,
       parent: 'Subfund 1',
       type: 'Direct Investments'
     },
     {
       id: 'd9',
-      title: {v: 'Oil&Gas2', f: 'Oil & Gas'},
+      title: 'Oil & Gas',
       amount: 1.03,
       parent: 'Subfund 1',
       type: 'Direct Investments'
     },  
     {
       id: 'd10',
-      title: {v: 'Telecoms2', f: 'Telecoms'},
+      title: 'Telecoms',
       amount: 0.63,
       parent: 'Subfund 1',
       type: 'Direct Investments'

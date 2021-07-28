@@ -22,13 +22,16 @@ const TreeMapRVChart = (props) => {
         "color":"transparent", 
         "children": [
             {
-                "title": "Direct Investments", 
+                'title': 'Direct Investments',
+                "className": "test",
+                "style": {'align-items': "flex-start", "gap": "-20px"}, 
                 "color": "orange",
                 "children": [...DirectInvestments]
             },
             {
                 "title": "Subfunds", 
                 "color": "orange",
+                "style": {'align-items': "flex-start"}, 
                 "children": [...Subfunds]
             }
             ]

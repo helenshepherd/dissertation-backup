@@ -17,8 +17,6 @@ const Expenses = (props) => {
   const filteredExpenses = props.items.filter((expense) => {
     return expense.parent === ctx.parent;
   });
-  console.log("filteredExpeneses");
-  console.log(filteredExpenses);
 
   return (
     <div>
