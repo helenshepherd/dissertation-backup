@@ -1,10 +1,7 @@
 import React from 'react';
 
 const ParentContext = React.createContext({
-    parent: '',
-    grandparent: '',
-    greatgrandparent: '',
-    greatgreat: ''
+    parent: ['Top Layer']
 });
 
 export default ParentContext;

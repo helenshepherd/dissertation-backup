@@ -16,17 +16,17 @@ const Expenses = (props) => {
   console.log(ctx.parent);
 
   const filteredParentExpenses = props.items.filter((expense) => {
-    return expense.parent === ctx.parent;
+    return expense.parent === ctx.parent[ctx.parent.length-1];
   });
-  const filteredGrandparentExpenses = props.items.filter((expense) => {
-    return expense.parent === ctx.grandparent;
-  });
-  const filteredGreatGrandparentExpenses = props.items.filter((expense) => {
-    return expense.parent === ctx.greatgrandparent;
-  });
-  const filteredGreatGreatExpenses = props.items.filter((expense) => {
-    return expense.parent === ctx.greatgreat;
-  });
+  // const filteredGrandparentExpenses = props.items.filter((expense) => {
+  //   return expense.parent === ctx.grandparent;
+  // });
+  // const filteredGreatGrandparentExpenses = props.items.filter((expense) => {
+  //   return expense.parent === ctx.greatgrandparent;
+  // });
+  // const filteredGreatGreatExpenses = props.items.filter((expense) => {
+  //   return expense.parent === ctx.greatgreat;
+  // });
 
 
   return (
@@ -37,11 +37,17 @@ const Expenses = (props) => {
         />
         {/* <ExpensesChart expenses={filteredParentExpenses} /> */}
         <TreeMapChart expenses={props.items}/>
-        <TreeMapRVChart 
+        {/* <TreeMapRVChart 
           investments={filteredGrandparentExpenses}/>
         <TreeMapRVChart 
-          investments={filteredParentExpenses}/>
-        
+          investments={filteredParentExpenses}/> */}
+        {ctx.parent.map((item) => (
+          <TreeMapRVChart
+            investments={props.items.filter((investment) => {
+              return investment.parent === item;
+            })}
+          />
+        ))} 
         <ExpensesList 
           selected = {ctx.parent}
           items={filteredParentExpenses} />
@@ -52,3 +58,4 @@ const Expenses = (props) => {
 };
 
 export default Expenses;
+

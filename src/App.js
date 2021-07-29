@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 import Expenses from './components/Expenses/Expenses';
 import ParentContext from './store/parent-context';
@@ -11,43 +11,30 @@ const RVprops = RVdata;
 // const DUMMY_EXPENSES = dummyData;
 
 const App = () => {
+  const ctx = useContext(ParentContext);
   
-  const [filteredParent, setFilteredParent] = useState('Top Layer');
-  const [filteredGrandparent, setFilteredGrandparent] = useState('');
-  const [filteredGreatGrandparent, setFilteredGreatGrandparent] = useState('');
-  const [filteredGreatGreat, setFilteredGreatGreat] = useState('');
-
-  // const [expenses, setExpenses] = useState(RVdata);
-
-  // const addExpenseHandler = (expense) => {
-  //   setExpenses((prevExpenses) => {
-  //     return [expense, ...prevExpenses];
-  //   });
-  // };
+  const [filteredParent, setFilteredParent] = useState(['Top Layer']);
 
   const filterChangeHandler = (selectedParent) => {
-    setFilteredGreatGreat(filteredGreatGrandparent);
-    setFilteredGreatGrandparent(filteredGrandparent)
-    setFilteredGrandparent(filteredParent);
-    setFilteredParent(selectedParent);
+    console.log(selectedParent);
+    let current = ctx.parent;
+    current.push(selectedParent);
+    setFilteredParent(current);
   };
 
-  const titleClickHandler = (clickedTitle) => {
-    setFilteredGreatGreat('');
-    setFilteredGreatGrandparent('')
-    setFilteredGrandparent('');
-    setFilteredParent(clickedTitle);
-  }
+  // const titleClickHandler = (clickedTitle) => {
+  //   setFilteredGreatGreat('');
+  //   setFilteredGreatGrandparent('')
+  //   setFilteredGrandparent('');
+  //   setFilteredParent(clickedTitle);
+  // }
 
 
   return (
     <ParentContext.Provider value={{
       parent: filteredParent,
-      grandparent: filteredGrandparent,
-      greatgrandparent: filteredGreatGrandparent,
-      greatgreat: filteredGreatGreat,
       onItemClick: filterChangeHandler,
-      onTitleClick: titleClickHandler
+      // onTitleClick: titleClickHandler
     }}> {/* //the.Provider makes it a component */}
       {/* <NewExpense onAddExpense={addExpenseHandler} /> */}
       <Expenses items={RVprops} />
