@@ -6,8 +6,16 @@ const TreeMapLabel = (props) => {
 
   const ctx = useContext(ParentContext);
 
+  currentValues = [ctx.parent, ctx.grandparent, ctx.greatgrandparent, ctx.greatgreat]
+
   const titleClickHandler = (event) => {
-    ctx.onTitleClick(event.target.innerText);
+    console.log(event);
+    selectedParent = event.target.innerText
+    selectedGrandparent = 
+    selectedGreatGrandparent = 
+    selectedGreatGreat = 
+    // ctx.onTitleClick(event.target.innerText);
+
   };
 
 
