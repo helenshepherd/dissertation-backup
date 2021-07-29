@@ -1,7 +1,7 @@
 import React from 'react';
 
 import TreeMap from '../TreeMap';
-import TreeMapLabel from '../TreeMapLabel';
+// import TreeMapLabel from './TreeMapLabel';
 
 const TreeMapChart = (props) => {
   const chartDataPoints = [
@@ -17,7 +17,7 @@ const TreeMapChart = (props) => {
     ['Direct Investments (Subfund 1)', 'Subfund 1',0,0],
     ['Fund 1', 'Subfunds (Top Layer)',0,0],
     ['Subfund 1', 'Fund 1',0,0],
-    [<TreeMapLabel/>, 'Subfund 1', 20,20]
+
   ];
 
   for (const expense of props.expenses) {

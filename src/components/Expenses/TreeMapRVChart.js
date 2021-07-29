@@ -1,11 +1,10 @@
 import React from 'react';
+import TreeMapLabel from './TreeMapLabel';
 
 import TreeMapRV from '../TreeMapRV';
 // import TreeMapLabel from '../TreeMapLabel';
 
 const TreeMapRVChart = (props) => {
-    console.log("investments")
-    console.log(props.investments)
     const Subfunds = [];
     const DirectInvestments = [];
 
@@ -38,7 +37,11 @@ const TreeMapRVChart = (props) => {
         };
 
 
-  return <TreeMapRV dataRV={RVDataPoints} />;
+  return (
+    <div>
+        <TreeMapLabel/>
+        <TreeMapRV dataRV={RVDataPoints} />
+    </div>);
 };
 
 export default TreeMapRVChart;

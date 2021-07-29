@@ -8,12 +8,12 @@ const TreeMapRV = (props) =>  {
     const ctx = useContext(ParentContext);
 
     const myData = props.dataRV;
-    console.log("myData")
-    console.log(myData)
 
     const leafClick = (leafNode, event) => {
       ctx.onItemClick(event.target.firstChild.nodeValue);
     };
+
+
       
     return (
       <div className="App">

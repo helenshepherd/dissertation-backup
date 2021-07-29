@@ -32,13 +32,22 @@ const App = () => {
     setFilteredParent(selectedParent);
   };
 
+  const titleClickHandler = (clickedTitle) => {
+    setFilteredGreatGreat('');
+    setFilteredGreatGrandparent('')
+    setFilteredGrandparent('');
+    setFilteredParent(clickedTitle);
+  }
+
+
   return (
     <ParentContext.Provider value={{
       parent: filteredParent,
       grandparent: filteredGrandparent,
       greatgrandparent: filteredGreatGrandparent,
       greatgreat: filteredGreatGreat,
-      onItemClick: filterChangeHandler
+      onItemClick: filterChangeHandler,
+      onTitleClick: titleClickHandler
     }}> {/* //the.Provider makes it a component */}
       {/* <NewExpense onAddExpense={addExpenseHandler} /> */}
       <Expenses items={RVprops} />
