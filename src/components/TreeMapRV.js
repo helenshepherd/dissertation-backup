@@ -13,8 +13,6 @@ const TreeMapRV = (props) =>  {
 
     const leafClick = (leafNode, event) => {
       ctx.onItemClick(event.target.firstChild.nodeValue);
-      console.log("evnet");
-      console.log(event);
     };
       
     return (
@@ -24,7 +22,7 @@ const TreeMapRV = (props) =>  {
           // mode={'squarify'}
           title={'My New Treemap'}
           width={800}
-          height={600}
+          height={800}
           data={myData}
           colorType={'literal'}
           className={'treemap'}

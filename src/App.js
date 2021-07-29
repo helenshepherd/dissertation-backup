@@ -13,6 +13,9 @@ const RVprops = RVdata;
 const App = () => {
   
   const [filteredParent, setFilteredParent] = useState('Top Layer');
+  const [filteredGrandparent, setFilteredGrandparent] = useState('');
+  const [filteredGreatGrandparent, setFilteredGreatGrandparent] = useState('');
+  const [filteredGreatGreat, setFilteredGreatGreat] = useState('');
 
   // const [expenses, setExpenses] = useState(RVdata);
 
@@ -23,12 +26,18 @@ const App = () => {
   // };
 
   const filterChangeHandler = (selectedParent) => {
+    setFilteredGreatGreat(filteredGreatGrandparent);
+    setFilteredGreatGrandparent(filteredGrandparent)
+    setFilteredGrandparent(filteredParent);
     setFilteredParent(selectedParent);
   };
 
   return (
     <ParentContext.Provider value={{
       parent: filteredParent,
+      grandparent: filteredGrandparent,
+      greatgrandparent: filteredGreatGrandparent,
+      greatgreat: filteredGreatGreat,
       onItemClick: filterChangeHandler
     }}> {/* //the.Provider makes it a component */}
       {/* <NewExpense onAddExpense={addExpenseHandler} /> */}

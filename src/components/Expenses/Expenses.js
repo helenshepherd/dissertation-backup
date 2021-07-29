@@ -14,9 +14,20 @@ const Expenses = (props) => {
   const ctx = useContext(ParentContext);
   console.log("ctxparent");
   console.log(ctx.parent);
-  const filteredExpenses = props.items.filter((expense) => {
+
+  const filteredParentExpenses = props.items.filter((expense) => {
     return expense.parent === ctx.parent;
   });
+  const filteredGrandparentExpenses = props.items.filter((expense) => {
+    return expense.parent === ctx.grandparent;
+  });
+  const filteredGreatGrandparentExpenses = props.items.filter((expense) => {
+    return expense.parent === ctx.greatgrandparent;
+  });
+  const filteredGreatGreatExpenses = props.items.filter((expense) => {
+    return expense.parent === ctx.greatgreat;
+  });
+
 
   return (
     <div>
@@ -24,12 +35,16 @@ const Expenses = (props) => {
         <ExpensesFilter
           selected={ctx.parent}
         />
-        {/* <ExpensesChart expenses={filteredExpenses} /> */}
+        {/* <ExpensesChart expenses={filteredParentExpenses} /> */}
         <TreeMapChart expenses={props.items}/>
-        <TreeMapRVChart investments={filteredExpenses}/>
+        <TreeMapRVChart 
+          investments={filteredGrandparentExpenses}/>
+        <TreeMapRVChart 
+          investments={filteredParentExpenses}/>
+        
         <ExpensesList 
           selected = {ctx.parent}
-          items={filteredExpenses} />
+          items={filteredParentExpenses} />
           
       </Card>
     </div>
