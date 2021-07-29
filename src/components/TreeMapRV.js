@@ -10,8 +10,9 @@ const TreeMapRV = (props) =>  {
     const myData = props.dataRV;
 
     const leafClick = (leafNode, event) => {
-      console.log(event)
-      ctx.onItemClick(event.target.firstChild.nodeValue);
+      console.log("innerText")
+      console.log(event.target.innerText)
+      ctx.onItemClick(event.target.innerText);
     };
     
     return (

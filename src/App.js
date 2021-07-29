@@ -22,14 +22,10 @@ const App = () => {
     setFilteredParent(current);
   };
 
-  // const titleClickHandler = (clickedTitle) => {
-  //   setFilteredGreatGreat('');
-  //   setFilteredGreatGrandparent('')
-  //   setFilteredGrandparent('');
-  //   setFilteredParent(clickedTitle);
-  // }
-
-
+console.log("app.js - filteredParent")
+console.log(filteredParent)
+console.log("app.js - ctx.parent")
+console.log(ctx.parent)
   return (
     <ParentContext.Provider value={{
       parent: filteredParent,

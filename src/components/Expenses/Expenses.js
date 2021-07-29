@@ -12,24 +12,14 @@ import TreeMapRVChart from './TreeMapRVChart';
 
 const Expenses = (props) => {
   const ctx = useContext(ParentContext);
-  console.log("ctxparent");
-  console.log(ctx.parent);
 
   const filteredParentExpenses = props.items.filter((expense) => {
     return expense.parent === ctx.parent[ctx.parent.length-1];
   });
-  // const filteredGrandparentExpenses = props.items.filter((expense) => {
-  //   return expense.parent === ctx.grandparent;
-  // });
-  // const filteredGreatGrandparentExpenses = props.items.filter((expense) => {
-  //   return expense.parent === ctx.greatgrandparent;
-  // });
-  // const filteredGreatGreatExpenses = props.items.filter((expense) => {
-  //   return expense.parent === ctx.greatgreat;
-  // });
-
-
-  return (
+// 
+  console.log("expenses.js")
+  return (  
+    
     <div>
       <Card className='expenses'>
         <ExpensesFilter

@@ -6,7 +6,7 @@ const TreeMapLabel = (props) => {
 
   const ctx = useContext(ParentContext);
 
-  const currentValues = [ctx.parent, ctx.grandparent, ctx.greatgrandparent, ctx.greatgreat]
+  // const currentValues = [ctx.parent, ctx.grandparent, ctx.greatgrandparent, ctx.greatgreat]
 
   const titleClickHandler = (event) => {
     console.log(event);
