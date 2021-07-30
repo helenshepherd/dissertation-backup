@@ -27,10 +27,6 @@ const Expenses = (props) => {
         />
         {/* <ExpensesChart expenses={filteredParentExpenses} /> */}
         <TreeMapChart expenses={props.items}/>
-        {/* <TreeMapRVChart 
-          investments={filteredGrandparentExpenses}/>
-        <TreeMapRVChart 
-          investments={filteredParentExpenses}/> */}
         {ctx.parent.map((item) => (
           <TreeMapRVChart
             investments={props.items.filter((investment) => {

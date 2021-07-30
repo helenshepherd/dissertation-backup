@@ -5,28 +5,28 @@ import ParentContext from '../../store/parent-context';
 const TreeMapLabel = (props) => {
 
   const ctx = useContext(ParentContext);
+  let currentValues = ctx.parent;
+  console.log("currentValues");
+  console.log(currentValues);
 
   // const currentValues = [ctx.parent, ctx.grandparent, ctx.greatgrandparent, ctx.greatgreat]
 
   const titleClickHandler = (event) => {
     console.log(event);
-    // selectedParent = event.target.innerText;
-    // const parentIndex = currentValues.findIndex(selectedParent);
-
-
-    // ctx.onTitleClick(event.target.innerText);
-
+    let clickedTitle = event.target.innerText;
+    console.log("clickedTitle");
+    console.log(clickedTitle);
+    let titleIndex = currentValues.indexOf(clickedTitle);
+    let newValues = currentValues.slice(0,(titleIndex+1));
+    ctx.onTitleClick(newValues);
   };
 
+  let content = [];
+  for (let item in ctx.parent){
+    content.push(<h2 onClick={titleClickHandler}>{ctx.parent[item]}</h2>)
+  }
 
-  return (
-    <div>
-        <h2 onClick={titleClickHandler}>{ctx.greatgreat}</h2>
-        <h2 onClick={titleClickHandler}>{ctx.greatgrandparent}</h2>
-        <h2 onClick={titleClickHandler}>{ctx.grandparent}</h2>
-        <h2 onClick={titleClickHandler}>{ctx.parent}</h2>
-    </div>
-  );
+  return content;
 };
 
 export default TreeMapLabel;

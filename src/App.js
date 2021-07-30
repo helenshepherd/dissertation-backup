@@ -22,6 +22,10 @@ const App = () => {
     setFilteredParent(current);
   };
 
+  const titleClickHandler = (newValues) => {
+    setFilteredParent(newValues);
+  }
+
 console.log("app.js - filteredParent")
 console.log(filteredParent)
 console.log("app.js - ctx.parent")
@@ -30,7 +34,7 @@ console.log(ctx.parent)
     <ParentContext.Provider value={{
       parent: filteredParent,
       onItemClick: filterChangeHandler,
-      // onTitleClick: titleClickHandler
+      onTitleClick: titleClickHandler
     }}> {/* //the.Provider makes it a component */}
       {/* <NewExpense onAddExpense={addExpenseHandler} /> */}
       <Expenses items={RVprops} />
