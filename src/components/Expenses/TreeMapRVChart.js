@@ -4,16 +4,21 @@ import TreeMapLabel from './TreeMapLabel';
 import TreeMapRV from '../TreeMapRV';
 // import TreeMapLabel from '../TreeMapLabel';
 
+
+//purple #3a3c62
+//color.light #d7d0dd
+// background.dark #242640
+// tumelo #2eb6b9
 const TreeMapRVChart = (props) => {
     const Subfunds = [];
     const DirectInvestments = [];
 
     for(const investment of props.investments) {
         if(investment.type==='Direct Investments'){
-            DirectInvestments.push({"title":`${investment.title}`, "color": "#ff0000", "size":`${investment.amount}`})
+            DirectInvestments.push({"title":`${investment.title}`, "color": "#2eb6b9", "size":`${investment.amount}`})
         }
         else if(investment.type === 'Subfunds'){
-            Subfunds.push({"title":`${investment.title}`, "color": "#ff0000", "size":`${investment.amount}`})
+            Subfunds.push({"title":`${investment.title}`, "color": "#e83b77", "size":`${investment.amount}`})
         }
     }
     const RVDataPoints = {
@@ -24,12 +29,12 @@ const TreeMapRVChart = (props) => {
                 'title': 'Direct Investments',
                 "className": "test",
                 "style": {'align-items': "flex-start", "gap": "-20px"}, 
-                "color": "orange",
+                "color": "#3a3c62",
                 "children": [...DirectInvestments]
             },
             {
                 "title": "Subfunds", 
-                "color": "orange",
+                "color": "#d7d0dd",
                 "style": {'align-items': "flex-start"}, 
                 "children": [...Subfunds]
             }

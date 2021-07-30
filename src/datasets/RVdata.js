@@ -96,14 +96,14 @@ const RVdata = [
       type:'Subfunds'
 
     },
-    {
-      id: 'e4',
-      title: 'Fund 4',
-      amount: 8,
-      parent: 'Top Layer',
-      type: 'Subfunds'
+    // {
+    //   id: 'e4',
+    //   title: 'Fund 4',
+    //   amount: 8,
+    //   parent: 'Top Layer',
+    //   type: 'Subfunds'
 
-    },
+    // },
     {
       id: 'b1',
       title: 'Financials',
@@ -219,7 +219,7 @@ const RVdata = [
     {
       id: 'd4',
       title: 'Consumer Services',
-      amount: 1.93,
+      amount: 1.03,
       parent: 'Subfund 1',
       type: 'Direct Investments'
     },

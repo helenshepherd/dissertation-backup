@@ -28,7 +28,9 @@ const TreeMapRV = (props) =>  {
           className={'treemap'}
           hideRootNode={true}
           onLeafClick={leafClick}
-          />
+          // colorRange={['#00b9bc','#19c0c2','#32c7c9','#4cced0','#66d5d6','#7fdcdd','#99e3e4','#b2eaea','#ccf1f1','#e5f8f8','#ffffff']}
+          // colorType={'category'}      
+           />
       </div>
     );
   }
