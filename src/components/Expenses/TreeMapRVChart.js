@@ -39,7 +39,7 @@ const TreeMapRVChart = (props) => {
 
   return (
     <div>
-        <TreeMapLabel/>
+        <TreeMapLabel currentParent={props.chartParent}/>
         <TreeMapRV dataRV={RVDataPoints} />
     </div>);
 };

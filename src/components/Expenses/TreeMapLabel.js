@@ -9,7 +9,6 @@ const TreeMapLabel = (props) => {
   console.log("currentValues");
   console.log(currentValues);
 
-  // const currentValues = [ctx.parent, ctx.grandparent, ctx.greatgrandparent, ctx.greatgreat]
 
   const titleClickHandler = (event) => {
     console.log(event);
@@ -20,9 +19,12 @@ const TreeMapLabel = (props) => {
     let newValues = currentValues.slice(0,(titleIndex+1));
     ctx.onTitleClick(newValues);
   };
+  const currentParent=props.currentParent;
+  let currentParentIndex = ctx.parent.indexOf(currentParent);
+  let currentParentList = ctx.parent.slice(0, (currentParentIndex+1));
 
   let content = [];
-  for (let item in ctx.parent){
+  for (let item in currentParentList){
     content.push(<h2 onClick={titleClickHandler}>{ctx.parent[item]}</h2>)
   }
 
