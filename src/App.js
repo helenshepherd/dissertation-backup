@@ -16,9 +16,7 @@ const App = () => {
   const [filteredParent, setFilteredParent] = useState(['Top Layer']);
 
   const filterChangeHandler = (selectedParent) => {
-    console.log("ctx.parent", ctx.parent, "selectedParent", selectedParent);
     let current = ctx.parent;
-    console.log("ctx.parent", ctx.parent, "selectedParent", selectedParent, "current", current);
     current.push(selectedParent);
     setFilteredParent([...current]);
   };

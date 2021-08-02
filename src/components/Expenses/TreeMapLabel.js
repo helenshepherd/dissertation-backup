@@ -25,7 +25,7 @@ const TreeMapLabel = (props) => {
 
   let content = [];
   for (let item in currentParentList){
-    content.push(<h2 onClick={titleClickHandler}>{ctx.parent[item]}</h2>)
+    content.push(<div style={{display:'inline'}}><h2 style={{display:'inline'}} onClick={titleClickHandler}>{ctx.parent[item]}</h2><p  style={{display:'inline'}}>  >  </p></div>)
   }
 
   return content;

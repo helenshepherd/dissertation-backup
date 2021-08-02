@@ -22,11 +22,7 @@ const Expenses = (props) => {
     //test
     <div>
       <Card className='expenses'>
-        <ExpensesFilter
-          selected={ctx.parent}
-        />
-        {/* <ExpensesChart expenses={filteredParentExpenses} /> */}
-        <TreeMapChart expenses={props.items}/>
+      
         {ctx.parent.map((item) => (
           <TreeMapRVChart
             chartParent={item}
@@ -38,7 +34,11 @@ const Expenses = (props) => {
         <ExpensesList 
           selected = {ctx.parent}
           items={filteredParentExpenses} />
-          
+          <ExpensesFilter
+          selected={ctx.parent}
+        />
+        {/* <ExpensesChart expenses={filteredParentExpenses} /> */}
+        <TreeMapChart expenses={props.items}/>  
       </Card>
     </div>
   );
