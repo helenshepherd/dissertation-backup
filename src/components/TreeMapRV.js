@@ -8,6 +8,7 @@ const TreeMapRV = (props) =>  {
     const ctx = useContext(ParentContext);
 
     const myData = props.dataRV;
+    console.log(myData)
 
     const leafClick = (leafNode, event) => {
       console.log("innerText")
