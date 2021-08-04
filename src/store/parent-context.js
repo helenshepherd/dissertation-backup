@@ -27,6 +27,7 @@ const ParentContext = React.createContext({
     subfundsBubbles: [...SubfundsShades],
     // directInvestmentsBubblesShades: [],
     // subfundsBubblesShades: []
+    selectedBubbles: ['']
 });
 
 

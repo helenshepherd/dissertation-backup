@@ -8,17 +8,15 @@ const TreeMapRV = (props) =>  {
     const ctx = useContext(ParentContext);
 
     const myData = props.dataRV;
-    console.log(myData)
-
-    const leafClick = (leafNode, event) => {
-      console.log("innerText")
-      console.log(event.target.innerText)
-      ctx.onItemClick(event.target.innerText);
-    };
-
-    const [selectedLeaf, setsSelectedLeaf] = useState(['']);
+   
+    const [selectedLeaf, setSelectedLeaf] = useState(['']);
     const [previousColor, setPreviousColor] = useState(['']);
-    
+
+    //  const leafClick = (leaf, event) => {
+    //   leaf.data.style.border-width='6px';
+    //   ctx.onItemClick(event.target.innerText);
+    // };
+
     return (
       <div className="App">
         <Treemap
@@ -31,9 +29,17 @@ const TreeMapRV = (props) =>  {
           colorType={'literal'}
           className={'treemap'}
           hideRootNode={true}
-          onLeafClick={leafClick}
+          onLeafClick={(leaf, event) => {
+            setSelectedLeaf(leaf.data.title)
+            console.log("leaf", leaf);
+            ctx.onBubbleClick(`${leaf.data.title}`)//${leaf.parent.parent.title}
+            if(leaf.data.title!=="Direct Investments" && leaf.data.title!=="Subfunds"){
+              // selectedLeaf.data.style = {"border": "5px solid red"};
+              ctx.onItemClick(event.target.innerText);
+            };
+          }}
           onLeafMouseOver = {(leaf, event) => {
-            setsSelectedLeaf(leaf.data.title)
+            console.log(leaf)
             setPreviousColor(leaf.data.color)
             if(leaf.data.title!=="Direct Investments" && leaf.data.title!=="Subfunds"){
               leaf.data.color="white";
@@ -43,9 +49,7 @@ const TreeMapRV = (props) =>  {
             if(leaf.data.title!=="Direct Investments" && leaf.data.title!=="Subfunds"){
               leaf.data.color=previousColor;
             }
-          }}
-          // colorRange={['#00b9bc','#19c0c2','#32c7c9','#4cced0','#66d5d6','#7fdcdd','#99e3e4','#b2eaea','#ccf1f1','#e5f8f8','#ffffff']}
-          // colorType={'category'}      
+          }}   
            />
       </div>
     );

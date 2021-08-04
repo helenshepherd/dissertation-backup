@@ -14,8 +14,6 @@ import ParentContext from '../../store/parent-context';
 // tumelo #2eb6b9
 const TreeMapRVChart = (props) => {
     const ctx = useContext(ParentContext);
-    console.log("chart parent", ctx.parent)
-    console.log("chart shades", ctx.directInvestmentsBubbles)
 
     let Subfunds = [];
     let DirectInvestments = [];
@@ -33,9 +31,19 @@ const TreeMapRVChart = (props) => {
     }
     tempDirectInvestments.sort((a,b) => parseFloat(b.size) - parseFloat(a.size));
     tempDirectInvestments.forEach((element,index)=>element.color=ctx.directInvestmentsBubbles[index]);
+    tempDirectInvestments.forEach(function(element){
+        if(ctx.selectedBubbles.includes(element.title)){
+            element.style =  {"border": "5px solid red"};
+        }
+    } )
     DirectInvestments=tempDirectInvestments;
     tempSubfunds.sort((a,b) => parseFloat(b.size) - parseFloat(a.size));
     tempSubfunds.forEach((element,index)=>element.color=ctx.subfundsBubbles[index]);
+    tempSubfunds.forEach(function(element){
+        if(ctx.selectedBubbles.includes(element.title)){
+            element.style =  {"border": "5px solid red"};
+        }
+    } )
     Subfunds=tempSubfunds;
 
 

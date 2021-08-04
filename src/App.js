@@ -14,6 +14,7 @@ const App = () => {
   const ctx = useContext(ParentContext);
   
   const [filteredParent, setFilteredParent] = useState(['Top Layer']);
+  const [selectedBubbles, setSelectedBubbles] = useState(['']);
 
   const filterChangeHandler = (selectedParent) => {
     let current = ctx.parent;
@@ -23,19 +24,23 @@ const App = () => {
 
   const titleClickHandler = (newValues) => {
     setFilteredParent(newValues);
-  }
+  };
 
-console.log("app.js - filteredParent")
-console.log(filteredParent)
-console.log("app.js - ctx.parent")
-console.log(ctx.parent)
+  const bubbleClickHandler = (bubbleTitle) => {
+    let previous = ctx.selectedBubbles;
+    previous.push(bubbleTitle);
+    setSelectedBubbles([...previous]);
+  };
+
   return (
     <ParentContext.Provider value={{
       parent: filteredParent,
       directInvestmentsBubbles: ctx.directInvestmentsBubbles,
       subfundsBubbles: ctx.subfundsBubbles,
+      selectedBubbles: ctx.selectedBubbles,
       onItemClick: filterChangeHandler,
-      onTitleClick: titleClickHandler
+      onTitleClick: titleClickHandler,
+      onBubbleClick: bubbleClickHandler
     }}> {/* //the.Provider makes it a component */}
       {/* <NewExpense onAddExpense={addExpenseHandler} /> */}
       <Expenses items={RVprops} />
