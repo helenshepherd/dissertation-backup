@@ -19,26 +19,26 @@ const TreeMapRVChart = (props) => {
 
     let Subfunds = [];
     let DirectInvestments = [];
-    console.log("DirectInvestments", DirectInvestments)
 
-    let num = 0;
-    let tempArray = [];
-    console.log("tempArray1",tempArray)
+    let tempDirectInvestments = [];
+    let tempSubfunds = [];
 
     for(const investment of props.investments) {
         if(investment.type==='Direct Investments'){
-            // DirectInvestments.push({"title":`${investment.title}`, "color": ctx.directInvestmentsBubbles[num], "size":`${investment.amount}`});
-            tempArray.push({"title":`${investment.title}`, "size":`${investment.amount}`});
-            num++;
+            tempDirectInvestments.push({"title":`${investment.title}`, "size":`${investment.amount}`});
         }
         else if(investment.type === 'Subfunds'){
-            Subfunds.push({"title":`${investment.title}`, "color": "#e83b77", "size":`${investment.amount}`})
+            tempSubfunds.push({"title":`${investment.title}`, "size":`${investment.amount}`});
         }
     }
-    tempArray.sort((a,b) => parseFloat(b.size) - parseFloat(a.size));
-    console.log("tempArray", tempArray)
-    tempArray.forEach((element,index)=>element.color=ctx.directInvestmentsBubbles[index]);
-    DirectInvestments=tempArray;
+    tempDirectInvestments.sort((a,b) => parseFloat(b.size) - parseFloat(a.size));
+    tempDirectInvestments.forEach((element,index)=>element.color=ctx.directInvestmentsBubbles[index]);
+    DirectInvestments=tempDirectInvestments;
+    tempSubfunds.sort((a,b) => parseFloat(b.size) - parseFloat(a.size));
+    tempSubfunds.forEach((element,index)=>element.color=ctx.subfundsBubbles[index]);
+    Subfunds=tempSubfunds;
+
+
 
     const RVDataPoints = {
         "title": "Top Layer", 

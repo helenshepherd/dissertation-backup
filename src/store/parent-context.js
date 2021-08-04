@@ -7,24 +7,24 @@ function shadeHexColor(color, percent) {
 
 // https://github.com/PimpTrizkit/PJs/wiki/12.-Shade,-Blend-and-Convert-a-Web-Color-(pSBC.js)
 
-let directInvestmentsBubblesColor= '#2eb6b9';
-let shades=[directInvestmentsBubblesColor];
+const directInvestmentsBubblesColor= '#2eb6b9';
+let DIshades=[directInvestmentsBubblesColor];
 
 for(let num=0.1; num <1; num=num+0.1){
-    shades.push(shadeHexColor(directInvestmentsBubblesColor, num));
+    DIshades.push(shadeHexColor(directInvestmentsBubblesColor, num));
 }
+const subfundsBubblesColor= '#e83b77';
+let SubfundsShades=[subfundsBubblesColor];
 
-
-console.log("shades", shades);
-
-// const subfundsBubblesColor=;
-
+for(let num=0.1; num <1; num=num+0.1){
+    SubfundsShades.push(shadeHexColor(subfundsBubblesColor, num));
+}
 const ParentContext = React.createContext({
     parent: ['Top Layer'],
     // directInvestmentsBackground: '',
-    directInvestmentsBubbles: [...shades],
+    directInvestmentsBubbles: [...DIshades],
     // subfundsBackground:'',
-    // // subfundsBubbles: subfundsBubblesColor,
+    subfundsBubbles: [...SubfundsShades],
     // directInvestmentsBubblesShades: [],
     // subfundsBubblesShades: []
 });

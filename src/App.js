@@ -33,6 +33,7 @@ console.log(ctx.parent)
     <ParentContext.Provider value={{
       parent: filteredParent,
       directInvestmentsBubbles: ctx.directInvestmentsBubbles,
+      subfundsBubbles: ctx.subfundsBubbles,
       onItemClick: filterChangeHandler,
       onTitleClick: titleClickHandler
     }}> {/* //the.Provider makes it a component */}
