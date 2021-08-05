@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react';
 import './TreeMapRV.css';
 import {Treemap} from 'react-vis';
-import ParentContext from '../store/parent-context';
+import ParentContext from '../../store/parent-context';
 
 
 const TreeMapRV = (props) =>  {
@@ -32,10 +32,10 @@ const TreeMapRV = (props) =>  {
           onLeafClick={(leaf, event) => {
             setSelectedLeaf(leaf.data.id)
             console.log("leaf", leaf);
-            ctx.onBubbleClick(`${leaf.data.id}`)//${leaf.parent.parent.title}
+            ctx.onBubbleClick(leaf.data.id)//${leaf.parent.parent.title}
             if(leaf.data.title!=="Direct Investments" && leaf.data.title!=="Subfunds"){
               // selectedLeaf.data.style = {"border": "5px solid red"};
-              ctx.onItemClick(event.target.innerText);
+              ctx.onItemClick(leaf.data.id);
             };
           }}
           onLeafMouseOver = {(leaf, event) => {

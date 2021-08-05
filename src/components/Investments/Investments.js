@@ -1,20 +1,20 @@
 import React, { useContext } from 'react';
 
 import Card from '../UI/Card';
-import ExpensesFilter from './ExpensesFilter';
-import ExpensesList from './ExpensesList';
+// import ExpensesFilter from './ExpensesFilter';
+import InvestmentsList from './InvestmentsList';
 // import ExpensesChart from './TreeMapChart';
-import './Expenses.css';
+import './Investments.css';
 import ParentContext from '../../store/parent-context';
-import TreeMapChart from './TreeMapChart';
-import TreeMapRVChart from './TreeMapRVChart';
+// import TreeMapChart from './TreeMapChart';
+import TreeMapRVChart from '../Chart/TreeMapRVChart';
 
 
-const Expenses = (props) => {
+const Investments = (props) => {
   const ctx = useContext(ParentContext);
 
   const filteredParentExpenses = props.items.filter((expense) => {
-    return expense.parent === ctx.parent[ctx.parent.length-1];
+    return expense.id === ctx.parent[ctx.parent.length-1];
   });
 // 
   console.log("expenses.js")
@@ -31,18 +31,18 @@ const Expenses = (props) => {
             })}
           />
         ))} 
-        <ExpensesList 
+        <InvestmentsList 
           selected = {ctx.parent}
           items={filteredParentExpenses} />
-          <ExpensesFilter
+          {/* <ExpensesFilter
           selected={ctx.parent}
-        />
+        /> */}
         {/* <ExpensesChart expenses={filteredParentExpenses} /> */}
-        <TreeMapChart expenses={props.items}/>  
+        {/* <TreeMapChart expenses={props.items}/>   */}
       </Card>
     </div>
   );
 };
 
-export default Expenses;
+export default Investments;
 

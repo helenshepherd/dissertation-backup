@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 
-import Expenses from './components/Expenses/Expenses';
+import Investments from './components/Investments/Investments';
 import ParentContext from './store/parent-context';
 import '../node_modules/react-vis/dist/style.css';
 import RVdata from './datasets/RVdata.js';
@@ -13,7 +13,7 @@ const RVprops = RVdata;
 const App = () => {
   const ctx = useContext(ParentContext);
   
-  const [filteredParent, setFilteredParent] = useState(['Top Layer']);
+  const [filteredParent, setFilteredParent] = useState(['aa']);
   const [selectedBubbles, setSelectedBubbles] = useState(['']);
 
   const filterChangeHandler = (selectedParent) => {
@@ -45,7 +45,7 @@ const App = () => {
       onBubbleClick: bubbleClickHandler
     }}> {/* //the.Provider makes it a component */}
       {/* <NewExpense onAddExpense={addExpenseHandler} /> */}
-      <Expenses items={RVprops} />
+      <Investments items={RVprops} />
     </ParentContext.Provider>
   );
 };

@@ -6,15 +6,9 @@ const TreeMapLabel = (props) => {
 
   const ctx = useContext(ParentContext);
   let currentValues = ctx.parent;
-  console.log("currentValues");
-  console.log(currentValues);
-
 
   const titleClickHandler = (event) => {
-    console.log(event);
     let clickedTitle = event.target.innerText;
-    console.log("clickedTitle");
-    console.log(clickedTitle);
     let titleIndex = currentValues.indexOf(clickedTitle);
     let newValues = currentValues.slice(0,(titleIndex+1));
     ctx.onTitleClick(newValues);

@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import TreeMapLabel from './TreeMapLabel';
 
-import TreeMapRV from '../TreeMapRV';
+import TreeMapRV from './TreeMapRV';
 // import TreeMapLabel from '../TreeMapLabel';
 
 import ParentContext from '../../store/parent-context';
@@ -33,7 +33,7 @@ const TreeMapRVChart = (props) => {
     tempDirectInvestments.forEach((element,index)=>element.color=ctx.directInvestmentsBubbles[index]);
     tempDirectInvestments.forEach(function(element){
         if(ctx.selectedBubbles.includes(element.id)){
-            element.style =  {"border": `10px solid ${ctx.directInvestmentsHighlight}`};
+            element.style =  {"border": `6px solid ${ctx.directInvestmentsHighlight}`};
         }
     } )
     DirectInvestments=tempDirectInvestments;
@@ -41,7 +41,7 @@ const TreeMapRVChart = (props) => {
     tempSubfunds.forEach((element,index)=>element.color=ctx.subfundsBubbles[index]);
     tempSubfunds.forEach(function(element){
         if(ctx.selectedBubbles.includes(element.id)){
-            element.style =  {"border": `10px solid ${ctx.subfundsHighlight}`};
+            element.style =  {"border": `6px solid ${ctx.subfundsHighlight}`};
         }
     } )
     Subfunds=tempSubfunds;

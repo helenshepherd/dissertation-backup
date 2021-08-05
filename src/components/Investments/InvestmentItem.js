@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 
-import ExpenseDate from './ExpenseDate';
+import InvestmentLogo from './InvestmentLogo';
 import Card from '../UI/Card';
-import './ExpenseItem.css';
+import './InvestmentItem.css';
 import ParentContext from '../../store/parent-context';
 
-const ExpenseItem = (props) => {
+const InvestmentItem = (props) => {
   const ctx = useContext(ParentContext);
 
   const clickListener = (event) => {
@@ -16,7 +16,7 @@ const ExpenseItem = (props) => {
   return (
     <li onClick={clickListener}>
       <Card className='expense-item'>
-        <ExpenseDate title={props.title} />
+        <InvestmentLogo title={props.title} />
         <div className='expense-item__description'>
           <h2>{props.title}</h2>
           <h2>(within  {props.parent})</h2>
@@ -27,4 +27,4 @@ const ExpenseItem = (props) => {
   );
 };
 
-export default ExpenseItem;
+export default InvestmentItem;
