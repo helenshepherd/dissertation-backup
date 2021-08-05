@@ -14,12 +14,22 @@ const TreeMapLabel = (props) => {
     ctx.onTitleClick(newValues);
   };
   const currentParent=props.currentParent;
-  let currentParentIndex = ctx.parent.indexOf(currentParent);
-  let currentParentList = ctx.parent.slice(0, (currentParentIndex+1));
+  // let currentParentIndex = ctx.parent.indexOf(currentParent);
+  let currentParentIndex = 0;
+  for(let i=0; i<ctx.parent.length; i++){
+    if (ctx.parent[i].id===currentParent){
+      currentParentIndex = i;
+    }
+  }
+  let currentParentList = [];
+  for(let i=0; i<(currentParentIndex+1); i++){
+    currentParentList.push(ctx.parent[i].title)
+  }
+  // let currentParentList = ctx.parent.slice(0, (currentParentIndex+1));
 
   let content = [];
   for (let item in currentParentList){
-    content.push(<div style={{display:'inline'}}><h2 style={{display:'inline'}} onClick={titleClickHandler}>{ctx.parent[item]}</h2><p  style={{display:'inline'}}>  >  </p></div>)
+    content.push(<div style={{display:'inline'}}><h2 style={{display:'inline'}} onClick={titleClickHandler}>{currentParentList[item]}</h2><p  style={{display:'inline'}}>  >  </p></div>)
   }
 
   return content;

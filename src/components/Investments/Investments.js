@@ -14,20 +14,19 @@ const Investments = (props) => {
   const ctx = useContext(ParentContext);
 
   const filteredParentExpenses = props.items.filter((expense) => {
-    return expense.id === ctx.parent[ctx.parent.length-1];
+    return expense.id === (ctx.parent[ctx.parent.length-1]).id;
   });
-// 
-  console.log("expenses.js")
+
   return (  
-    //test
+ 
     <div>
       <Card className='expenses'>
       
         {ctx.parent.map((item) => (
           <TreeMapRVChart
-            chartParent={item}
+            chartParent={item.id}
             investments={props.items.filter((investment) => {
-              return investment.parent === item;
+              return investment.parent === item.id;
             })}
           />
         ))} 

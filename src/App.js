@@ -13,7 +13,7 @@ const RVprops = RVdata;
 const App = () => {
   const ctx = useContext(ParentContext);
   
-  const [filteredParent, setFilteredParent] = useState(['aa']);
+  const [filteredParent, setFilteredParent] = useState([{title: 'Top Layer', id: 'aa'}]);
   const [selectedBubbles, setSelectedBubbles] = useState(['']);
 
   const filterChangeHandler = (selectedParent) => {

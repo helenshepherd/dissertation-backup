@@ -35,7 +35,7 @@ const TreeMapRV = (props) =>  {
             ctx.onBubbleClick(leaf.data.id)//${leaf.parent.parent.title}
             if(leaf.data.title!=="Direct Investments" && leaf.data.title!=="Subfunds"){
               // selectedLeaf.data.style = {"border": "5px solid red"};
-              ctx.onItemClick(leaf.data.id);
+              ctx.onItemClick({title: leaf.data.title, id: leaf.data.id});
             };
           }}
           onLeafMouseOver = {(leaf, event) => {

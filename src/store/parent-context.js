@@ -22,7 +22,7 @@ for(let num=0.1; num <1; num=num+0.1){
     SubfundsShades.push(shadeHexColor(subfundsBubblesColor, num));
 }
 const ParentContext = React.createContext({
-    parent: ['aa'],
+    parent: [{title: 'Top Layer', id: 'aa'}],
     // directInvestmentsBackground: '',
     directInvestmentsBubbles: [...DIshades],
     directInvestmentsHighlight: directInvestmentsBubblesHighlight,
