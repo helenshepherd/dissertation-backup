@@ -3,7 +3,6 @@ import './TreeMapRV.css';
 import {Treemap} from 'react-vis';
 import ParentContext from '../../store/parent-context';
 
-
 const TreeMapRV = (props) =>  {
     const ctx = useContext(ParentContext);
 
@@ -30,16 +29,23 @@ const TreeMapRV = (props) =>  {
           className={'treemap'}
           hideRootNode={true}
           onLeafClick={(leaf, event) => {
-            setSelectedLeaf(leaf.data.id)
-            console.log("leaf", leaf);
+            console.log(leaf);
+            console.log("parenttitle",leaf.parent.data.title);
+            // setSelectedLeaf(leaf.data.id)
             ctx.onBubbleClick(leaf.data.id)//${leaf.parent.parent.title}
-            if(leaf.data.title!=="Direct Investments" && leaf.data.title!=="Subfunds"){
+            if(leaf.parent.data.title==="Subfunds"){
               // selectedLeaf.data.style = {"border": "5px solid red"};
               ctx.onItemClick({title: leaf.data.title, id: leaf.data.id});
             };
+            if(leaf.parent.data.title==="Direct Investments"){
+              console.log("working")
+              console.log(leaf.data.id)
+              ctx.onIndustryClick(leaf.data.id);
+              console.log("ctxlistparent", ctx.listParent)
+            }
+            console.log("ctxlistparent", ctx.listParent)
           }}
           onLeafMouseOver = {(leaf, event) => {
-            console.log(leaf)
             setPreviousColor(leaf.data.color)
             if(leaf.data.title!=="Direct Investments" && leaf.data.title!=="Subfunds"){
               leaf.data.color="white";
@@ -54,6 +60,5 @@ const TreeMapRV = (props) =>  {
       </div>
     );
   }
-
 
 export default TreeMapRV;

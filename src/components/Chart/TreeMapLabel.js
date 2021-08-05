@@ -9,9 +9,18 @@ const TreeMapLabel = (props) => {
 
   const titleClickHandler = (event) => {
     let clickedTitle = event.target.innerText;
-    let titleIndex = currentValues.indexOf(clickedTitle);
+    let titleIndex = 0;
+    for(let i=0; i<currentValues.length; i++){
+      if (currentValues[i].title===clickedTitle){
+        titleIndex = i;
+      }
+    }
+    console.log("titleINdex", titleIndex);
+    // let titleIndex = currentValues.indexOf(clickedTitle);
     let newValues = currentValues.slice(0,(titleIndex+1));
+    console.log("newValues", newValues)
     ctx.onTitleClick(newValues);
+
   };
   const currentParent=props.currentParent;
   // let currentParentIndex = ctx.parent.indexOf(currentParent);

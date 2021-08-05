@@ -14,11 +14,13 @@ const Investments = (props) => {
   const ctx = useContext(ParentContext);
 
   const filteredParentExpenses = props.items.filter((expense) => {
-    return expense.id === (ctx.parent[ctx.parent.length-1]).id;
+    return expense.parent === (ctx.parent[ctx.parent.length-1]).id;
   });
 
+  console.log("ctxlistparent",ctx.listParent)
+
   return (  
- 
+    
     <div>
       <Card className='expenses'>
       
@@ -30,9 +32,14 @@ const Investments = (props) => {
             })}
           />
         ))} 
-        <InvestmentsList 
+        
+        {ctx.listParent != '' ? (
+          <InvestmentsList 
           selected = {ctx.parent}
-          items={filteredParentExpenses} />
+          items={filteredParentExpenses} /> )
+          :null
+        }
+        
           {/* <ExpensesFilter
           selected={ctx.parent}
         /> */}

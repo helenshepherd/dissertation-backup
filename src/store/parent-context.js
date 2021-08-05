@@ -29,7 +29,8 @@ const ParentContext = React.createContext({
     // subfundsBackground:'',
     subfundsBubbles: [...SubfundsShades],
     subfundsHighlight: subfundsBubblesHighlight,
-    selectedBubbles: ['']
+    selectedBubbles: [''],
+    listParent: ''
 });
 
 export default ParentContext;
