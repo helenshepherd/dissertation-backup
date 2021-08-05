@@ -23,25 +23,25 @@ const TreeMapRVChart = (props) => {
 
     for(const investment of props.investments) {
         if(investment.type==='Direct Investments'){
-            tempDirectInvestments.push({"title":`${investment.title}`, "size":`${investment.amount}`});
+            tempDirectInvestments.push({"title":`${investment.title}`, "size":`${investment.amount}`, "id":`${investment.id}`});
         }
         else if(investment.type === 'Subfunds'){
-            tempSubfunds.push({"title":`${investment.title}`, "size":`${investment.amount}`});
+            tempSubfunds.push({"title":`${investment.title}`, "size":`${investment.amount}`, "id":`${investment.id}`});
         }
     }
     tempDirectInvestments.sort((a,b) => parseFloat(b.size) - parseFloat(a.size));
     tempDirectInvestments.forEach((element,index)=>element.color=ctx.directInvestmentsBubbles[index]);
     tempDirectInvestments.forEach(function(element){
-        if(ctx.selectedBubbles.includes(element.title)){
-            element.style =  {"border": "5px solid red"};
+        if(ctx.selectedBubbles.includes(element.id)){
+            element.style =  {"border": `10px solid ${ctx.directInvestmentsHighlight}`};
         }
     } )
     DirectInvestments=tempDirectInvestments;
     tempSubfunds.sort((a,b) => parseFloat(b.size) - parseFloat(a.size));
     tempSubfunds.forEach((element,index)=>element.color=ctx.subfundsBubbles[index]);
     tempSubfunds.forEach(function(element){
-        if(ctx.selectedBubbles.includes(element.title)){
-            element.style =  {"border": "5px solid red"};
+        if(ctx.selectedBubbles.includes(element.id)){
+            element.style =  {"border": `10px solid ${ctx.subfundsHighlight}`};
         }
     } )
     Subfunds=tempSubfunds;

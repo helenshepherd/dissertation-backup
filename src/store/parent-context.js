@@ -9,12 +9,14 @@ function shadeHexColor(color, percent) {
 
 const directInvestmentsBubblesColor= '#2eb6b9';
 let DIshades=[directInvestmentsBubblesColor];
+const directInvestmentsBubblesHighlight = shadeHexColor(directInvestmentsBubblesColor, -0.5);
 
 for(let num=0.1; num <1; num=num+0.1){
     DIshades.push(shadeHexColor(directInvestmentsBubblesColor, num));
 }
 const subfundsBubblesColor= '#e83b77';
 let SubfundsShades=[subfundsBubblesColor];
+const subfundsBubblesHighlight = shadeHexColor(subfundsBubblesColor, -0.5);
 
 for(let num=0.1; num <1; num=num+0.1){
     SubfundsShades.push(shadeHexColor(subfundsBubblesColor, num));
@@ -23,8 +25,10 @@ const ParentContext = React.createContext({
     parent: ['Top Layer'],
     // directInvestmentsBackground: '',
     directInvestmentsBubbles: [...DIshades],
+    directInvestmentsHighlight: directInvestmentsBubblesHighlight,
     // subfundsBackground:'',
     subfundsBubbles: [...SubfundsShades],
+    subfundsHighlight: subfundsBubblesHighlight,
     // directInvestmentsBubblesShades: [],
     // subfundsBubblesShades: []
     selectedBubbles: ['']

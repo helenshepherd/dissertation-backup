@@ -26,9 +26,9 @@ const App = () => {
     setFilteredParent(newValues);
   };
 
-  const bubbleClickHandler = (bubbleTitle) => {
+  const bubbleClickHandler = (bubbleID) => {
     let previous = ctx.selectedBubbles;
-    previous.push(bubbleTitle);
+    previous.push(bubbleID);
     setSelectedBubbles([...previous]);
   };
 
@@ -38,6 +38,8 @@ const App = () => {
       directInvestmentsBubbles: ctx.directInvestmentsBubbles,
       subfundsBubbles: ctx.subfundsBubbles,
       selectedBubbles: ctx.selectedBubbles,
+      subfundsHighlight: ctx.subfundsHighlight,
+      directInvestmentsHighlight: ctx.directInvestmentsHighlight,
       onItemClick: filterChangeHandler,
       onTitleClick: titleClickHandler,
       onBubbleClick: bubbleClickHandler

@@ -30,9 +30,9 @@ const TreeMapRV = (props) =>  {
           className={'treemap'}
           hideRootNode={true}
           onLeafClick={(leaf, event) => {
-            setSelectedLeaf(leaf.data.title)
+            setSelectedLeaf(leaf.data.id)
             console.log("leaf", leaf);
-            ctx.onBubbleClick(`${leaf.data.title}`)//${leaf.parent.parent.title}
+            ctx.onBubbleClick(`${leaf.data.id}`)//${leaf.parent.parent.title}
             if(leaf.data.title!=="Direct Investments" && leaf.data.title!=="Subfunds"){
               // selectedLeaf.data.style = {"border": "5px solid red"};
               ctx.onItemClick(event.target.innerText);
