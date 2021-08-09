@@ -17,6 +17,7 @@ const App = () => {
   const [selectedBubbles, setSelectedBubbles] = useState(['']);
   const [selectedIndustry, setSelectedIndustry] = useState('');
 
+
   const filterChangeHandler = (selectedParent) => {
     let current = ctx.parent;
     current.push(selectedParent);
@@ -30,7 +31,7 @@ const App = () => {
   const bubbleClickHandler = (bubbleID) => {
     let previous = ctx.selectedBubbles;
     previous.push(bubbleID);
-    // setSelectedBubbles([...previous]);
+    setSelectedBubbles([...previous]);
   };
 
   const industryClickHandler = (industry) => {
@@ -47,8 +48,8 @@ const App = () => {
       listParent: selectedIndustry,
       directInvestmentsBubbles: ctx.directInvestmentsBubbles,
       subfundsBubbles: ctx.subfundsBubbles,
-      selectedBubbles: ctx.selectedBubbles,
-      selectedIndustry: ctx.selectedIndustry,
+      selectedBubbles: selectedBubbles,
+      selectedIndustry: selectedIndustry,
       subfundsHighlight: ctx.subfundsHighlight,
       directInvestmentsHighlight: ctx.directInvestmentsHighlight,
       onItemClick: filterChangeHandler,

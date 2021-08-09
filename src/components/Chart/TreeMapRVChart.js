@@ -33,7 +33,10 @@ const TreeMapRVChart = (props) => {
     tempDirectInvestments.forEach((element,index)=>element.color=ctx.directInvestmentsBubbles[index]);
     tempDirectInvestments.forEach(function(element){
         if(ctx.selectedBubbles.includes(element.id)){
-            element.style =  {"border": `6px solid ${ctx.directInvestmentsHighlight}`};
+            element.style =  {"border": `5px solid ${ctx.directInvestmentsHighlight}`};
+        }
+        else{
+            element.style =  {"border": `5px solid transparent`};
         }
     } )
     DirectInvestments=tempDirectInvestments;
@@ -41,7 +44,10 @@ const TreeMapRVChart = (props) => {
     tempSubfunds.forEach((element,index)=>element.color=ctx.subfundsBubbles[index]);
     tempSubfunds.forEach(function(element){
         if(ctx.selectedBubbles.includes(element.id)){
-            element.style =  {"border": `6px solid ${ctx.subfundsHighlight}`};
+            element.style =  {"border": `5px solid ${ctx.subfundsHighlight}`};
+        }
+        else{
+            element.style =  {"border": `5px solid transparent`};
         }
     } )
     Subfunds=tempSubfunds;
@@ -50,7 +56,8 @@ const TreeMapRVChart = (props) => {
 
     const RVDataPoints = {
         "title": "Top Layer", 
-        "color":"transparent", 
+        "color":"white",
+        "style": {'align-items': "flex-start", "gap": "-20px", "boxShadow": "0 0 0 10px #888"}, 
         "children": [
             {
                 'title': 'Direct Investments',

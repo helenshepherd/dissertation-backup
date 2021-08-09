@@ -8,6 +8,7 @@ import './Investments.css';
 import ParentContext from '../../store/parent-context';
 // import TreeMapChart from './TreeMapChart';
 import TreeMapRVChart from '../Chart/TreeMapRVChart';
+import SearchBar from '../SearchBar/SearchBar';
 
 
 const Investments = (props) => {
@@ -17,13 +18,15 @@ const Investments = (props) => {
     return expense.parent === (ctx.parent[ctx.parent.length-1]).id;
   });
 
-  console.log("ctxlistparent",ctx.listParent)
+  const listItems = props.items.filter((item) => {
+    return item.parent === (ctx.listParent);
+  })
 
   return (  
     
     <div>
       <Card className='expenses'>
-      
+        <SearchBar/>
         {ctx.parent.map((item) => (
           <TreeMapRVChart
             chartParent={item.id}
@@ -35,8 +38,8 @@ const Investments = (props) => {
         
         {ctx.listParent != '' ? (
           <InvestmentsList 
-          selected = {ctx.parent}
-          items={filteredParentExpenses} /> )
+          selected = {ctx.listParent}
+          items={listItems} /> )
           :null
         }
         
