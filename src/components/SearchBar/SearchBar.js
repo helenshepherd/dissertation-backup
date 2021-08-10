@@ -1,30 +1,25 @@
-import { useRef, useState } from "react";
+import { useContext } from "react";
+
+import ParentContext from "../../store/parent-context";
+import "./SearchBar.css";
 
 const SearchBar = (props)=> {
-    const [enteredText, setEnteredText] = useState(''); //use ref if only want value when submitted
-
-    const inputChangeHandler = event => {
-        setEnteredText(event.target.value);
-        console.log(event.target.value);
-    }
-
-    const searchSubmissionHandler = event => {
-        event.preventDefault(); //stops http request being sent
-        console.log(enteredText);
-        setEnteredText('');
-    }
+    const ctx = useContext(ParentContext);
 
     return (
         <form>
-            <div>
-                <label>Search</label>
+            <div className='control-group'>
+            <div className='form-control'>
+                <label htmlFor='name'>Search</label>
                 <input 
                     type='text' 
-                    onChange={inputChangeHandler}
-                    value={enteredText}/>
+                    id='name'
+                    onChange={ctx.onSearchInput}
+                    value={ctx.searchInput}/>
             </div>
-            <div>
-                <button onSubmit={searchSubmissionHandler}>Search</button>
+            <div className="form-actions">
+                <button onSubmit={ctx.onSearchSubmit}>Clear</button>
+            </div>
             </div>
         </form>
     )

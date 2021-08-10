@@ -30,7 +30,8 @@ const ParentContext = React.createContext({
     subfundsBubbles: [...SubfundsShades],
     subfundsHighlight: subfundsBubblesHighlight,
     selectedBubbles: [''],
-    listParent: ''
+    listParent: '',
+    searchInput: ''
 });
 
 export default ParentContext;

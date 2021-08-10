@@ -22,11 +22,23 @@ const Investments = (props) => {
     return item.parent === (ctx.listParent);
   })
 
+  const searchResults = props.items.filter((item)=>{
+    return item.title.toLowerCase().includes((ctx.searchInput).toLowerCase());
+  })
+
+  console.log(ctx.searchInput);
+  console.log("searchResrults", searchResults);
+
   return (  
-    
     <div>
       <Card className='expenses'>
         <SearchBar/>
+        {ctx.searchInput!='' ? (
+          <InvestmentsList
+          items={searchResults}
+          />)
+          :null
+        }
         {ctx.parent.map((item) => (
           <TreeMapRVChart
             chartParent={item.id}
