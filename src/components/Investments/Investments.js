@@ -57,10 +57,11 @@ const Investments = (props) => {
           />
         ))}  */}
         <TreeMapRVChart 
-            show={showChart}
-            hide={hideChart}
-            isShowing={chartIsVisible}
-            className={cssClasses.join(' ')}
+            // show={showChart}
+            // hide={hideChart}
+            // isShowing={chartIsVisible}
+            // className={cssClasses.join(' ')}
+            className='chartInvisible'
             chartParent={(ctx.parent[ctx.parent.length-1]).id}
             investments={filteredParentExpenses}
           />

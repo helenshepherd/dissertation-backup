@@ -3,4 +3,15 @@
     padding-bottom: -50px;
     word-wrap: break-word;
     text-align: center;
+    transition: all 0.5s ease-out;
+}
+
+.treemapVisible{
+    opacity:1;
+    transform: translateX(0);
+}
+
+.treemapInvisible{
+    opacity:0;
+    transform: translateX(-100%);
 }

@@ -79,9 +79,6 @@ const TreeMapRVChart = (props) => {
     <div>
         <TreeMapLabel currentParent={props.chartParent}/>
         <TreeMapRV 
-            show={props.show}
-            hide={props.hide}
-            isShowing={props.isShowing}
             dataRV={RVDataPoints} 
         />
     </div>);

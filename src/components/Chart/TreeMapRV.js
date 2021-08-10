@@ -15,6 +15,18 @@ const TreeMapRV = (props) =>  {
     //   leaf.data.style.border-width='6px';
     //   ctx.onItemClick(event.target.innerText);
     // };
+    
+    const [chartIsVisible, setChartIsVisible] = useState(true);
+    
+    const cssClasses = ['treemap', chartIsVisible ? 'treemapVisible' : 'treemapInvisible']
+
+    const showChart = () => {
+      setChartIsVisible(true);
+    }
+
+    const hideChart = () => {
+      setChartIsVisible(false);
+    }
 
     return (
       <div className="App">
@@ -26,19 +38,22 @@ const TreeMapRV = (props) =>  {
           height={700}
           data={myData}
           colorType={'literal'}
-          className={'treemap'}
+          className={cssClasses.join(' ')}
           hideRootNode={true}
           onLeafClick={(leaf, event) => {
+            hideChart();
             // setSelectedLeaf(leaf.data.id)
             ctx.onBubbleClick(leaf.data.id)//${leaf.parent.parent.title}
+            
             if(leaf.parent.data.title==="Subfunds"){
               // selectedLeaf.data.style = {"border": "5px solid red"};
               ctx.onItemClick({title: leaf.data.title, id: leaf.data.id});
-              {props.hide()};
+              console.log("hidden props")
             };
             if(leaf.parent.data.title==="Direct Investments"){
               ctx.onIndustryClick(leaf.data.id);
             }
+            // showChart();
           }}
           onLeafMouseOver = {(leaf, event) => {
             setPreviousColor(leaf.data.color)

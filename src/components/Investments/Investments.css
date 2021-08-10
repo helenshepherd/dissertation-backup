@@ -5,3 +5,12 @@
   width: 50rem;
   max-width: 95%;
 }
+
+.chartVisible {
+  opacity: 1;
+}
+
+.chartInvisible {
+  opacity: 0;
+  background-color: red;
+}
