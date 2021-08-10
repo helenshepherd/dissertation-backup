@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 
 import Card from '../UI/Card';
 // import ExpensesFilter from './ExpensesFilter';
@@ -26,8 +26,17 @@ const Investments = (props) => {
     return item.title.toLowerCase().includes((ctx.searchInput).toLowerCase());
   })
 
-  console.log(ctx.searchInput);
-  console.log("searchResrults", searchResults);
+  const cssClasses = ['chart', props.isShowing ? 'chartVisible' : 'chartInvisible']
+
+  const [chartIsVisible, setChartIsVisible] = useState(false);
+
+  const showChart = () => {
+    setChartIsVisible(true);
+  }
+
+  const hideChart = () => {
+    setChartIsVisible(false);
+  }
 
   return (  
     <div>
@@ -39,14 +48,22 @@ const Investments = (props) => {
           />)
           :null
         }
-        {ctx.parent.map((item) => (
+        {/* {ctx.parent.map((item) => (
           <TreeMapRVChart
             chartParent={item.id}
             investments={props.items.filter((investment) => {
               return investment.parent === item.id;
             })}
           />
-        ))} 
+        ))}  */}
+        <TreeMapRVChart 
+            show={showChart}
+            hide={hideChart}
+            isShowing={chartIsVisible}
+            className={cssClasses.join(' ')}
+            chartParent={(ctx.parent[ctx.parent.length-1]).id}
+            investments={filteredParentExpenses}
+          />
         
         {ctx.listParent != '' ? (
           <InvestmentsList 

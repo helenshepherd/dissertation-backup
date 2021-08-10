@@ -29,21 +29,16 @@ const TreeMapRV = (props) =>  {
           className={'treemap'}
           hideRootNode={true}
           onLeafClick={(leaf, event) => {
-            console.log(leaf);
-            console.log("parenttitle",leaf.parent.data.title);
             // setSelectedLeaf(leaf.data.id)
             ctx.onBubbleClick(leaf.data.id)//${leaf.parent.parent.title}
             if(leaf.parent.data.title==="Subfunds"){
               // selectedLeaf.data.style = {"border": "5px solid red"};
               ctx.onItemClick({title: leaf.data.title, id: leaf.data.id});
+              {props.hide()};
             };
             if(leaf.parent.data.title==="Direct Investments"){
-              console.log("working")
-              console.log(leaf.data.id)
               ctx.onIndustryClick(leaf.data.id);
-              console.log("ctxlistparent", ctx.listParent)
             }
-            console.log("ctxlistparent", ctx.listParent)
           }}
           onLeafMouseOver = {(leaf, event) => {
             setPreviousColor(leaf.data.color)

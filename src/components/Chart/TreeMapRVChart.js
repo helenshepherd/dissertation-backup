@@ -6,8 +6,7 @@ import TreeMapRV from './TreeMapRV';
 
 import ParentContext from '../../store/parent-context';
 
-
-    
+   
 //purple #3a3c62
 //color.light #d7d0dd
 // background.dark #242640
@@ -79,7 +78,12 @@ const TreeMapRVChart = (props) => {
   return (
     <div>
         <TreeMapLabel currentParent={props.chartParent}/>
-        <TreeMapRV dataRV={RVDataPoints} />
+        <TreeMapRV 
+            show={props.show}
+            hide={props.hide}
+            isShowing={props.isShowing}
+            dataRV={RVDataPoints} 
+        />
     </div>);
 };
 
